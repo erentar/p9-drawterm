@@ -10,6 +10,3 @@ default: $(LIB)
 $(LIB): $(OFILES)
 	$(AR) r $(LIB) $(OFILES)
 	$(RANLIB) $(LIB)
-
-x11.$O:	../glenda-t.xbm
-

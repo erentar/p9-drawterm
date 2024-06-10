@@ -52,8 +52,6 @@ static	Visual		*xvis;
 
 extern char		*geometry;	/* defined in main.c */
 
-#include "../glenda-t.xbm"
-
 Memimage*
 xallocmemimage(Rectangle r, ulong chan, int pmid, XImage **X)
 {
@@ -313,10 +311,6 @@ screeninit(void)
 	/* attrs.override_redirect = 1;*/ /* WM leave me alone! |CWOverrideRedirect */
 	xdrawable = XCreateWindow(xkmcon, RootWindow(xdisplay, screen), x, y, Dx(r), Dy(r), 0,
 		xscreendepth, InputOutput, xvis, CWBackPixel|CWBorderPixel|CWColormap, &attrs);
-
-	/* load the given bitmap data and create an X pixmap containing it. */
-	icon_pixmap = XCreateBitmapFromData(xkmcon, RootWindow(xdisplay, screen),
-		(char *)glenda_t_bits, glenda_t_width, glenda_t_height);
 
 	/*
 	 * set up property as required by ICCCM
